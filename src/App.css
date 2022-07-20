@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  font-size: 62.5%;
+  --basicColor: #fff;
+  --btnBackground: #193b45b4;
+  --btnBackgroundSecondary: #d76f19;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.background-patern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  background-image: url(./svg/blob-scene-haikei.svg);
+  aspect-ratio: 16/9;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(6rem, 5vw));
+  grid-template-rows: minmax(max(7rem, 8vw), auto) repeat(5, minmax(6rem, 5vw));
+  gap: 1rem;
+  padding: 3rem;
+  border-radius: 2rem;
+  color: var(--basicColor);
+  background-color: #0f2130ee;
+  backdrop-filter: blur(0.8rem);
+  font-size: clamp(2rem, 2vw, 4rem);
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.44);
+  font-family: "Roboto", sans-serif;
+}
+.output {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  grid-column: span 4;
 }
 
-.App-link {
-  color: #61dafb;
+.output-previus {
+  font-size: clamp(1.8rem, 1.5vw, 3rem);
+  color: #c0c0c0bc;
+}
+.span-two {
+  grid-column: span 2;
+}
+button {
+  border-radius: 1rem;
+  font-size: clamp(2rem, 2vw, 4rem);
+  color: var(--basicColor);
+  background-color: var(--btnBackground);
+  box-shadow: 3px 3px 3px #0000008c;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-family: "Roboto", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:nth-of-type(4n),
+button:last-child {
+  background-color: var(--btnBackgroundSecondary);
+}
+button:nth-of-type(-n + 3) {
+  background-color: #2c2d2dd5;
+}
+button:hover,
+button:focus {
+  box-shadow: 3px 3px 10px #000000;
 }
