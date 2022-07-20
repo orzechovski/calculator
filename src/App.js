@@ -20,8 +20,11 @@ function App() {
   };
 
   const reverseNumber = () => {
-    setCalc((parseInt(calc) * -1).toString());
+    if (calc !== "") {
+      setCalc((parseInt(calc) * -1).toString());
+    }
   };
+
   const addNumber = (e) => {
     const number = e.target.textContent.toString();
     if (calc === "0") {
