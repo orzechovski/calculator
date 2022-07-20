@@ -1,6 +1,6 @@
 {
   "homepage": "https://orzechovski.github.io/calculator",
-  "name": "calculator-test",
+  "name": "calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
